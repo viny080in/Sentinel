@@ -1,0 +1,7 @@
+AuditLogs
+| where TimeGenerated > ago(24h)
+| project TimeGenerated,
+    OperationName,
+    Result,
+    InitiatedBy
+| order by TimeGenerated desc
